@@ -1,0 +1,20 @@
+<div class="toasts">
+  <div *ngFor="let toast of (toasts | async)" class="toast" [ngClass]="className(toast)">
+    <ng-container *ngTemplateOutlet="toastTpl;context:{toast:toast}"></ng-container>
+  </div>
+</div>
+
+<ng-template #toastTpl let-toast="toast">
+  <mat-icon [ngClass]="(toast['icon'])">{{ toast.icon }}</mat-icon>
+
+  <div (mouseover)="mouseover(toast)" (mouseout)="mouseout(toast)" style="align-self: center;">
+    <div class="title">
+      {{ toast.title }}
+    </div>
+    <div class="message">{{toast.message}}</div>
+  </div>
+
+  <div class="cancel" (click)="close(toast)" matTooltip="Close the toast" matTooltipPosition="before">
+    <mat-icon>cancel</mat-icon>
+  </div>
+</ng-template>

@@ -1,0 +1,62 @@
+.mat-form-field {
+    display: inline;
+    text-align: left;
+}
+
+.mat-divider {
+    border-top-color: rgb(245, 242, 242);
+}
+
+.done-button {
+    min-width: 45px;
+    line-height: 25px;
+    padding: 2px 15px;
+    float: right;
+    // background-color: $material-color-primary;
+    color: #d8d9da;
+}
+
+::ng-deep .mat-datepicker-content .mat-calendar {
+    width: 200px !important;
+    height: 250px !important;
+}
+
+::ng-deep .mat-calendar-controls {
+    display: flex;
+    margin: 0 !important;
+}
+
+.mat-form-Css ::ng-deep .mat-form-field-underline {
+    bottom: 0 !important;
+}
+
+.mat-form-Css ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
+
+.custom-modalbox ::ng-deep .mat-dialog-container {
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mat-dialog-title {
+    margin: 5px 5px 10px;
+    display: inline-block;
+}
+
+.parentCss ::ng-deep .mat-dialog-content {
+    display: block;
+    margin: 20px 0px;
+    padding: 0 10px;
+    min-height: fit-content;
+    max-height: 65vh;
+    overflow: hidden;
+}
+
+.parentCss ::ng-deep .mat-dialog-actions {
+    padding: 5px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}

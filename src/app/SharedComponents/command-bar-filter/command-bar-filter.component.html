@@ -1,0 +1,23 @@
+<div style="display: flex; width: 100%; justify-content: space-between; ">
+    <div style="width: 98%">
+        <div style="width: 100%" #mainScreen>
+            <div style="display: flex;width: 100%;" *ngIf="CBarStrategy == 2" [ngClass]="{'detailsFilter': Configuration === 'Right' , 'listFilter' : Configuration === 'Left'}">
+                <ng-template #filterControl></ng-template>
+            </div>
+        </div>
+    </div>
+
+    <div class="verticalIcon" *ngIf="(VerticalMenu | async).length > 0">
+        <mat-icon [matMenuTriggerFor]="vMenu" fxShow="true">more_vert
+            <mat-menu #vMenu="matMenu" xPosition="before" [overlapTrigger]="false" [hasBackdrop]="true">
+                <ng-template #overflowFilterControl></ng-template>
+            </mat-menu>
+        </mat-icon>
+    </div>
+</div>
+
+<div *ngIf="CBarStrategy == 1">
+    <div class="vertical_filters">
+        <ng-template #filterControl></ng-template>
+    </div>
+</div>

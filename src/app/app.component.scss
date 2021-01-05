@@ -1,0 +1,87 @@
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: var(--mat-outline);
+    background: var(--mat-option-item);
+    border-radius: 4px;
+}
+
+::ng-deep {
+    .mat-form-field.mat-focused .mat-form-field-label {
+        color: var(--mat-outline) !important;
+    }
+    .mat-form-field.mat-focused .mat-form-field-ripple {
+        background-color: var(--mat-outline) !important;
+    }
+    .mat-form-field-ripple {
+        background-color: var(--mat-outline);
+    }
+    .mat-form-field-appearance-fill .mat-form-field-underline::before {
+        background-color: var(--mat-outline);
+    }
+    .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        color: var(--mat-outline);
+        background: var(--mat-option-item);
+        border-radius: 4px;
+    }
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+        color: var(--mat-outline) !important;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 0;
+        border-top: 0;
+    }
+    .mat-form-field-infix {
+        padding: 0.5em 0;
+        border-top: 0.64375em solid transparent !important;
+    }
+    .mat-form-field-wrapper {
+        padding-bottom: 0;
+    }
+    .mat-input-element {
+        caret-color: var(--mat-option-text);
+    }
+    .mat-input-element::placeholder {
+        color: var(--placeholder-text);
+        font-size: 13px;
+    }
+    .mat-select-arrow {
+        color: var(--mat-outline);
+    }
+    .mat-select-panel {
+        background-color: var(--mat-option-item);
+    }
+    .mat-option {
+        font-size: 12px !important;
+    }
+    .mat-option-text {
+        color: var(--mat-option-text);
+    }
+    .mat-select-value {
+        font-size: 13px;
+        padding: 12px;
+    }
+    .mat-select {
+        margin-top: 0px !important;
+    }
+    .mat-form-field-type-mat-select .mat-form-field-flex {
+        color: var(--mat-outline);
+    }
+    .mat-form-field-infix {
+        padding: 0;
+        border-top: 0.34375em solid transparent !important;
+    }
+    .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+        color: var(--border-card);
+    }
+    .mat-select-value-text {
+        color: var(--mat-option-text);
+    }
+    // overwrite the checkbox background
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: var(--button-primary) !important;
+    }
+    // overwrite the ripple overlay on hover and click
+    .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+        background-color: var(--button-primary) !important;
+    }
+}

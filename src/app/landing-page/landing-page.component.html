@@ -1,0 +1,22 @@
+<!-- <button mat-raised-button class="btn" (click)="example()">Example</button> -->
+<!-- <button mat-raised-button class="btn" (click)="drag()">Drag and Drop</button> -->
+<!-- <button mat-raised-button class="btn" (click)="dragFilter()">Drag the Filter</button> -->
+<div class="new-page" (window:resize)="onResize()">
+    <div class="wrap" [style.height.px]=myInnerHeight>
+        <h3>Platform for Ease of logistics in India Making Moving Goods in India Efficient Faster! Cheaper! Safer!</h3>
+        <div class="section">
+            <mat-card class="card-section" (mouseover)="toggleHover(item)" (mouseleave)="removeHover()" *ngFor="let item of cardDetail" [style.background-color]="optionColor(item)" [style.outline-color]="optionOutline(item)">
+                <div class=" card-div" *ngIf="hoveredElement!=item">
+                    <div class="icon">
+                        <img [src]="item.img" style=" height: 110px;" />
+                    </div>
+                    <div class=" heading-name">{{item.heading}}</div>
+                </div>
+                <div *ngIf="hoveredElement === item">
+                    <div class="hide-heading-name">{{item.heading}}</div>
+                    <div class="hidelinks" (click)="linkBtn()">{{item.dashboards}}</div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

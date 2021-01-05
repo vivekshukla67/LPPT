@@ -1,0 +1,36 @@
+.done-button {
+  min-width: 45px;
+  line-height: 25px;
+  padding: 2px 15px;
+  float: right;
+  background-color: blue;
+  color: #d8d9da;
+}
+::ng-deep .mat-dialog-container {
+  padding: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.mat-dialog-title {
+  margin: 5px 5px 10px;
+  display: inline-block;
+}
+:host ::ng-deep .mat-dialog-content {
+  display: block;
+  margin: 20px 0px;
+  padding: 0 10px;
+  max-height: 65vh;
+  overflow: hidden;
+}
+:host ::ng-deep .mat-dialog-actions {
+  padding: 5px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.mat-form-field {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}

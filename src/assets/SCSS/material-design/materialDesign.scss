@@ -1,0 +1,87 @@
+@mixin material-design {
+    .mat-form-field {
+        background-color: #101010;
+        font-weight: 300;
+        display: inline-block;
+        position: relative;
+        text-align: left;
+        margin-top: -1.8px;
+        border-radius: 2px;
+        width: 310px;
+    }
+     :host ::ng-deep .mat-input-element {
+        color: #d8d9da !important;
+        margin-top: -10px !important;
+        margin: 8px !important;
+        height: 16px;
+        font-size: 14px !important;
+    }
+     :host ::ng-deep .mat-form-field-label-wrapper {
+        top: 0.0625em !important;
+    }
+     :host ::ng-deep .mat-form-field-infix {
+        display: grid;
+        position: relative;
+        flex: auto;
+        min-width: 0;
+        width: 310px !important;
+        padding-bottom: 5px !important;
+        margin-top: 0px !important;
+    }
+    .mat-input-element mat-form-field-autofill-control {
+        margin-bottom: 30px !important;
+    }
+    .mat-form-field {
+        align-self: center;
+    }
+    input.mat-input-element {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+        margin-bottom: 10px !important;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding: 2.8em 0 2.8em 0;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+        height: 0px;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+        background-color: none;
+    }
+    .mat-form-field-underline {
+        position: absolute;
+        width: 0%;
+        pointer-events: none;
+        transform: scaleY(1.0001);
+    }
+     :host ::ng-deep .mat-select-value {
+        color: #d8d9da!important;
+        margin-left: 2px !important;
+    }
+     :host ::ng-deep .mat-select-arrow {
+        margin: 6px 0px !important;
+        margin-right: 6px !important;
+        color: #d8d9da !important;
+    }
+     :host ::ng-deep .mat-chip-list-wrapper {
+        margin-top: -30px;
+        margin-left: 5px;
+    }
+     :host ::ng-deep .mat-select-value-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 0px !important;
+    }
+     :host ::ng-deep .mat-select-placeholder {
+        font-size: 12px !important;
+        color: #d8d9da !important;
+        font-size: 12px;
+        margin-left: 0px;
+    }
+    .mat-input ::placeholder {
+        color: #d8d9da !important;
+    }
+}

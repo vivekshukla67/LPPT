@@ -1,0 +1,73 @@
+// true colors
+$white: #fff;
+$black: #000;
+$green: #0f0;
+$red: #f00;
+$gray: gray;
+// blue shades
+$bark_blue: #154383;
+$dim_blue: #334774;
+$light_blue: #246ab3;
+$fadded_blue: #669cc4;
+$lighter_blue: #d1ecf7;
+$dirty_blue: #b6cbe0;
+$pale_blue: #a1c5f7;
+$navy_blue: #003471;
+$thick_blue: #316fac;
+$rich_blue: #0058a5;
+$dark_blue: #76a6de;
+$violet_blue: #246ab3;
+$aqua_blue: #3498db;
+$aqua_light_blue: #66c1e0;
+$btn_blue: #2f66b3;
+$bahama_blue: #1a4183;
+$violet :#223a88;
+$navy_blue_light: #005dc9;
+$prussian_blue: #00000029;
+$prussian_blue: #000045;
+$cyprus: #0e2853;
+$cobalt: #004ba7;
+$lavender: #ebf3fd;
+$prussians_blue: #002f72;
+$jordy_blue: #85b5e6;
+$grey_87:#dedede;
+// black shades
+$nero: #272727;
+$dim_black: #191919;
+//Gray Shades
+$light_gray: #b9b9b9;
+$medium_gray: #c9c9c9;
+$lighter_gray: #eaeaea;
+$dark_gray: #4a4a4a;
+$thick_gray: #6a6a6a;
+$bark_gray: #8a8a8a;
+$darker_color: #9a9a9a;
+$thicker_gray: #707070;
+//white shades
+$dirty_white: #f7f7f7;
+$light_white: #ebebeb;
+$lighter_white: #f2f2f2;
+$milky_white: #f3f3f3;
+//Red Shades
+$dark_red: #b90000;
+//Green Shades
+$dark_green: #009f1e;
+$pale_green: #98ffab;
+$green: #009436;
+$turquoise_blue: #81ecec;
+$maya_blue: #74b9ff;
+//Font-Weight
+$thin: 100;
+$extraLight: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+$extraBold: 700;
+//yellow shades
+$yellow: #e8bb00;
+$browser-context: 12; // Default root font size
+@function pxtoem($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem;
+}

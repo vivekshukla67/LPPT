@@ -1,0 +1,80 @@
+mat-checkbox {
+    font-size: 11px !important;
+    color: var(--card-subtext) !important;
+}
+
+::ng-deep .mat-checkbox-inner-container {
+    height: 16px !important;
+    width: 16px !important;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 5px 0px 5px 5px;
+    margin: 5px;
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.mat-divider {
+    border-top-color: var(--card-subtext);
+}
+
+
+/* UI changing for search Filter */
+
+.search-section {
+    width: auto;
+    padding: 0 5px;
+    font-size: 13px;
+    color: var(--card-subtext);
+}
+
+.search-section .mat-form-field {
+    width: 100%;
+}
+
+.setSearchSpinner {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+
+::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: white;
+}
+
+::ng-deep .mat-checkbox-label {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 110px;
+    display: block;
+    text-overflow: ellipsis;
+    line-height: 1.15;
+}
+
+.activeItem,
+.activeItem:hover {
+    background-color: #e5f1f9;
+}
+
+ ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: var(--card-subtext);
+}
+
+::ng-deep .mat-checkbox-frame {
+    border-color: lightslategray;
+}
+
+.cssBtn {
+    width: 100%;
+    height: 42px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--footer-background);
+    color: var(--text-tags);
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border-tags);
+}

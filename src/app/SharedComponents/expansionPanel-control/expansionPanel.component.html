@@ -1,0 +1,35 @@
+<mat-accordion>
+    <mat-expansion-panel *ngIf="expansionList" class="expansion-panel" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header [collapsedHeight]="'40px'" [expandedHeight]="'40px'">
+            <mat-panel-title>
+                {{ExpansionList?.filterName}}
+            </mat-panel-title>
+            <mat-icon class="add-icon" (click)="this.AddSubFilter.emit(this.ExpansionList)" *ngIf="(!(ExpansionList))">add</mat-icon>
+        </mat-expansion-panel-header>
+        <mat-expansion-panel-body>
+            <div class="headerDetail">
+                <p>{{ExpansionList?.paramName}}</p>
+                <span class="editIcon">
+                <i class="fa fa-pencil" (click)="editFilter()"></i>
+            </span>
+                <div class="sort3">
+                    <mat-icon class="deleteIcon" (click)="delete()" routerLink="/app/createForm">delete</mat-icon>
+                </div>
+            </div>
+            <span *ngIf="ExpansionList">
+            <div (AddSubFilter)="this.AddSubFilter.emit($event)" (Edit)="this.Edit.emit($event)" (RemoveProperty)="removeProperty($event)">
+                <div class="headerDetail2">
+                    <mat-icon class="arrowRight">subdirectory_arrow_right</mat-icon>
+                    <p>{{ExpansionList?.paramName}}</p>
+                    <span class="editIcon">
+                    <i class="fa fa-pencil" (click)="editFilter()"></i>
+                </span>
+            <div class="sort3">
+                <mat-icon class="deleteIcon" (click)="delete()" routerLink="/app/createForm">delete</mat-icon>
+            </div>
+            </div>
+            </div>
+            </span>
+        </mat-expansion-panel-body>
+    </mat-expansion-panel>
+</mat-accordion>

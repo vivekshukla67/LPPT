@@ -1,0 +1,13 @@
+<table id="data-grid-table">
+      <tr>
+        <th *ngFor = "let column of labels">
+            {{column}}
+          </th>
+      </tr>
+    
+        <tr *ngFor = "let row of dataGridJSONArr">
+            <td *ngFor = "let column of labels">
+              {{row[column]}}
+            </td>
+          </tr>
+  </table>

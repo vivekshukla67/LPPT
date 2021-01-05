@@ -1,0 +1,277 @@
+// .example-container {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background: var(--background-color);
+// }
+
+// mat-sidenav {
+//     z-index: 0;
+//     width: 45px;
+//     background-color: var(--header-background);
+//     box-shadow: var(--shadow-header);
+//     color: #1b1d1f;
+// }
+
+// .mat-drawer-content {
+//     position: relative;
+//     display: block;
+//     height: 100%;
+//     overflow: initial;
+// }
+
+// ::ng-deep mat-sidenav-content {
+//     margin-right: 0px !important;
+//     z-index: 100 !important;
+// }
+
+// ::ng-deep mat-sidenav-content .content {
+//     width: calc(100% - 40px);
+//     height: calc(100% - 62px);
+//     top: 60px;
+
+// }
+
+// .mat-toolbar-single-row {
+//     height: 60px;
+//     position: absolute;
+//     color: #1b1d1f;
+//     box-shadow: var(--shadow-header);
+//     padding: 0px 8px;
+// }
+
+// mat-toolbar {
+//     z-index: 1000 !important;
+//     background-color: var(--header-background);
+//     font-size: 14px;
+// }
+
+// mat-sidenav-container .toolbar {
+//     position: -webkit-sticky;
+//     position: sticky;
+//     top: 0;
+//     width: 100%;
+//     height: 60px;
+//     display: -webkit-box;
+//     display: flex;
+//     left: 0;
+// }
+
+// .item-name {
+//     padding: 0 25px;
+//     color: #d8d9da;
+//     font-size: 14px;
+// }
+
+// .mat-list-base .mat-list-item ::ng-deep.mat-list-item-ripple,
+// .mat-list-base .mat-list-option .mat-list-item-ripple {
+//     overflow: hidden;
+// }
+
+// .mat-list-item {
+//     margin-top: 50px;
+// }
+
+// .head-sec {
+//     display: grid;
+//     grid-template-columns: 0.4fr;
+// }
+
+// .brand {
+//     color: #d8d9da;
+//     font-size: 20px !important;
+//     font-weight: 700;
+//     margin: 10px;
+// }
+
+// .switch {
+//     position: relative;
+//     display: inline-block;
+//     width: 40px;
+//     height: 20px;
+//     background-color: slateblue;
+//     border-radius: 20px;
+//     top: 5px;
+//     margin: 0 10px;
+// }
+
+// .checkbox {
+//     display: none;
+// }
+
+// .switch::after {
+//     content: '';
+//     position: absolute;
+//     width: 18px;
+//     height: 18px;
+//     border-radius: 50%;
+//     background-color: white;
+//     top: 2px; // TO GIVE AN EFFECT OF CIRCLE INSIDE SWITCH.
+//     left: 1px;
+//     transition: all 0.3s;
+// }
+
+// .checkbox:checked+.switch::after {
+//     left: 20px;
+// }
+
+// .checkbox:checked+.switch {
+//     background-color: slateblue;
+// }
+
+// .theme-switch {
+//     position: absolute;
+//     right: 1%;
+//     color: var(--header-text);
+// }
+
+// .example-spacer {
+//     flex: 1 1 auto;
+// }
+
+// .mat-icon-button {
+//     background-color: white;
+// }
+
+// .example-sidenav-content {
+//     display: flex;
+//     height: 100%;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+.loginpageWrapper {
+	display: flex;
+}
+
+.mmi_Wrapper {
+	height: calc(100vh - 00px);
+	padding: 20px;
+	overflow: auto;
+	background: #fafafa;
+	width: 65%;
+}
+
+.rightbanner {
+	background: url(../../assets/banner.png) right center no-repeat;
+	background-size: cover;
+	width: 36%;
+	height: calc(100vh - 00px);
+}
+
+.logo_top {
+	text-align: center;
+	padding: 35px 0px;
+}
+
+.login_mmi {
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px;
+	padding: 20px;
+	max-width: 488px;
+	width: 100%;
+	margin: 0 auto;
+	border-radius: 8px;
+}
+
+.login_mmi h1 {
+	font-size: 24px;
+	font-weight: 600;
+	color: #000;
+	line-height: 33px;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-control {
+	font-size: 16px;
+	padding: 11px 15px;
+	height: auto;
+}
+
+.form_mmi {
+	padding: 15px 0px;
+	font-size: 16px;
+}
+
+.btn-Submit {
+	padding: 7px 20px;
+	width: 100%;
+	text-align: center;
+	background: #009399;
+	border: none;
+	color: #fff;
+}
+
+.form-group-remforgot {
+	display: flex;
+}
+
+.mmiCheckBox input {
+	display: none;
+}
+
+.mmiCheckBox label {
+	background: url(../../assets/checkBox.png) 0 center no-repeat;
+	transition: all 0.2s;
+	cursor: pointer;
+	display: inline-block;
+	padding-left: 26px;
+	opacity: 1;
+	appearance: none;
+}
+
+.mmiCheckBox input:checked + label {
+	background: url(../../assets/checkedbox.png) 0 center no-repeat;
+}
+
+.queryFiler .mmiCheckBox input:checked + label {
+	background: url(../../assets/checkedbox_2nd.png) 0 center no-repeat;
+}
+
+.MMi_bottompanel {
+	padding: 30px 0px 0;
+	font-size: 12px;
+}
+
+.MMi_bottompanel img {
+	margin-bottom: 10px;
+}
+
+/*******************Inner Wigedt Page********************/
+
+/********Top Nav Section************/
+
+.topNav {
+	height: 58px;
+	background: #fff;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 4px;
+	padding: 5px 0px;
+	position: relative;
+	z-index: 10;
+}
+
+.icons_right {
+	justify-content: flex-end;
+	align-items: center;
+	padding: 2px 0px;
+}
+
+.icons_right > div {
+	padding: 0px 10px;
+	display: flex;
+	cursor: pointer;
+}
+
+.hamburger_menu {
+	display: inline-flex;
+	padding: 5px 11px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+/***********************************/

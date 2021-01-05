@@ -1,0 +1,79 @@
+<!-- <div [class]="'theme-wrapper'">
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav-content>
+            <div class="toolbar">
+                <mat-toolbar>
+                    <div class="head-sec">
+                        <div>
+                            <img src="../../assets/LOGO.png" alt="" height="60px" width="60px" routerLink="">
+                        </div>
+                    </div>
+                    <div style="display:grid;">
+                        <div style="font-size: 20px; font-weight: 500;">LPPT</div>
+                        <div style="margin-top: -7px;">Logistic Planning and Performance Monitoring Tool</div>
+                    </div>
+                    <span class="example-spacer"></span>
+                    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                      <mat-icon>question_answer</mat-icon>
+                    </button>
+                    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                      <mat-icon>notifications_none</mat-icon>
+                    </button>
+                    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" color="accent">
+                    <mat-icon>perm_identity</mat-icon>
+                </button>
+                </mat-toolbar>
+            </div>
+            <div class="content">
+                <alert [position]="Position.TopRight" [maxItems]="5" [isGlobal]="true" [queueAlerts]="true"></alert>
+               
+            </div>
+        </mat-sidenav-content>
+
+        <mat-sidenav #sidenav position="end" class="example-sidenav" mode="side" opened>
+            <mat-nav-list>
+                <mat-list-item>
+                    <button mat-icon-button class="example-icon" style=" margin-left: -10px;" aria-label=" Example icon-button with share icon ">
+                        <mat-icon>question_answer</mat-icon>
+                    </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-icon-button class="example-icon " style=" margin-left: -10px;" aria-label="Example icon-button with share icon ">
+                        <mat-icon>question_answer</mat-icon>
+                      </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-icon-button class="example-icon " style=" margin-left: -10px;" aria-label="Example icon-button with share icon ">
+                        <mat-icon>question_answer</mat-icon>
+                      </button>
+                </mat-list-item>
+                <mat-list-item>
+                    <button mat-icon-button class="example-icon " style=" margin-left: -10px;" aria-label="Example icon-button with share icon ">
+                        <mat-icon>question_answer</mat-icon>
+                      </button>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
+    </mat-sidenav-container>
+
+</div> -->
+<div class="Wrapper">
+    <nav class="topNav">
+        <div class="container-fluid">
+            <div class="row  ">
+                <div class="col-md-4  ">
+                    <div class="hamburger_menu"><img src="../../assets/menu.png"></div>
+                    <img src="../../assets/logo.png">
+                </div>
+                <div class="col-md-4 ml-auto  align-items-center">
+                    <div class="d-flex icons_right ">
+                        <div class="matIcons"><span class="material-icons-outlined">help</span></div>
+                        <div class="matIcons"><span class="material-icons-outlined">notifications</span></div>
+                        <div class="uerIcons"><img src="../../assets/user.png"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <router-outlet #myOutlet="outlet"></router-outlet>
+</div>

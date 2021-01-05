@@ -1,0 +1,575 @@
+<div (window:resize)="onResize()" [style.width.px]="width" style="height: calc(100vh - 120px);">
+    <div class="MMI_Container">
+        <div class="container-fluid">
+            <gridster [options]="options" style="padding: 10px 0;">
+                <div class="row options-header">
+                    <div class="col-md-6">
+                        <h1 class="dashTitle">Port Connectivity</h1>
+                    </div>
+                    <div class="col-md-6 justify-content-end">
+                        <ul class="rightFilterList">
+                            <li><span class="material-icons">filter_list</span> </li>
+                            <li>
+                                <div class="link_ach">Geography : India | Haryana</div>
+                            </li>
+                            <li><span class="material-icons">cached</span> </li>
+                            <li><span class="material-icons">settings</span> </li>
+                            <li><img src="../../assets/search_Group.png"></li>
+                            <li class="pr-0"><img src="../../assets/file-export.png"></li>
+                        </ul>
+                    </div>
+                </div>
+                <gridster-item class="b-s-Boder" [item]="item" *ngFor="let item of dashboard | async">
+                    <div class="Port_t_sec ">
+                        <h3>{{ item.widgetType }}</h3>
+                        <div class="rightTool ml-auto">
+                            <span class="material-icons" *ngIf="!item.dragEnabled"
+                                (click)="pin(item, false)">push_pin</span>
+                            <span class="material-icons-outlined" *ngIf="item.dragEnabled"
+                                (click)="pin(item, true)">push_pin</span>
+                            <span class="material-icons" [matMenuTriggerFor]="menu">more_vert</span>
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item (mousedown)="removeItem($event, item)"
+                                    (touchstart)="removeItem($event, item)">delete</button>
+                            </mat-menu>
+                        </div>
+                    </div>
+                    <div *ngIf="item.widgetType=='MAP'">
+                        <app-map></app-map>
+                    </div>
+                    <div *ngIf="item.widgetType=='CHART'">
+                        <app-chart></app-chart>
+                    </div>
+                    <div *ngIf="item.widgetType=='DATAGRID'">
+                        <app-data-grid></app-data-grid>
+                    </div>
+                    <!-- <div class="button-holder"> -->
+                    <!-- <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (mousedown)="removeItem($event, item)"
+                                (touchstart)="removeItem($event, item)">delete</button>
+                        </mat-menu> -->
+                    <!-- </div> -->
+                </gridster-item>
+            </gridster>
+        </div>
+    </div>
+
+    <!-- <div class="MMI_Container">
+    <div class="container-fluid">
+        <div class="map_layer_area">
+            <div class="row ">
+                <div class="col-md-6  pr-2">
+                    <div class="mmi-tooltip b-s-Boder">
+                        <div class="Port_t_sec ">
+                            <h3>Port Connectivity <span style="font-size: 18px; vertical-align: middle;"
+                                    class="material-icons-outlined">info</span></h3>
+                            <div class="rightTool ml-auto">
+                                <span class="material-icons">push_pin</span>
+                                <span class="material-icons">more_vert</span>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                            in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non</p>
+                    </div>
+                    <div class="row mt-3 ">
+                        <div class="col-md-6 pr-2">
+                            <div class="Query_Filter b-s-Boder">
+                                <div class="Port_t_sec ">
+                                    <h3>Query Filter <span style="font-size: 18px; vertical-align: middle;"
+                                            class="material-icons-outlined">info</span></h3>
+                                    <div class="rightTool ml-auto">
+                                        <span class="material-icons">push_pin</span>
+                                        <span class="material-icons">more_vert</span>
+
+                                    </div>
+                                </div>
+                                <div class="queryFiler">
+                                    <div class="form-group">
+                                        <label>Port</label>
+                                        <select class="form-control">
+                                            <option>All</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Industrial Cluster</label>
+                                        <select class="form-control">
+                                            <option>All</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Proximity less than</label>
+                                        <div class="radioButton col2">
+                                            <div class="radiiGroup">
+                                                <input type="radio" id="Distance" name="unt" value="Distance" checked>
+                                                <label for="Distance">Distance (Km)</label>
+                                            </div>
+                                            <div class="radiiGroup">
+                                                <input type="radio" id="time" name="unt" value="time">
+                                                <label for="time">Time (min) </label>
+                                            </div>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="50 km" value="50 km">
+                                    </div>
+
+                                </div>
+                                <div style="height: 95px;"></div>
+                                <div class="group_button">
+                                    <button type="submit" class="btn btn-lppt">Run Analysis</button>
+                                    <button type="submit" class="btn btn-reset">Reset </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 pl-2">
+
+                            <div class="widgetArea">
+                                <div class="widget_2nd_Col">
+                                    <div class="mmi_widgetS blue mr-3">
+                                        <div class="Port_t_sec pb-1 ">
+                                            <h3>Total Ports</h3>
+                                            <div class="rightTool ml-auto">
+                                                <span class="material-icons">more_vert</span>
+                                            </div>
+                                        </div>
+                                        <div class="wiD_A_t">
+                                            <div class="count_widget">95</div>
+                                            <div class="bottom_icon text-right"><img src="../../assets/totalPoint.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mmi_widgetS purple mr-3">
+                                        <div class="Port_t_sec pb-1 ">
+                                            <h3>Total Ports</h3>
+                                            <div class="rightTool ml-auto">
+                                                <span class="material-icons">more_vert</span>
+                                            </div>
+                                        </div>
+                                        <div class="wiD_A_t">
+                                            <div class="count_widget">95</div>
+                                            <div class="bottom_icon text-right"><img src="../../assets/in_cluster.png">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="widget_2nd_Col pt-3">
+                                    <div class="mmi_widgetS pink mr-3">
+                                        <div class="Port_t_sec pb-1 ">
+                                            <h3>Total Ports</h3>
+                                            <div class="rightTool ml-auto">
+                                                <span class="material-icons">more_vert</span>
+                                            </div>
+                                        </div>
+                                        <div class="wiD_A_t">
+                                            <div class="count_widget">95</div>
+                                            <div class="bottom_icon text-right"><img src="../../assets/iwt.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mmi_widgetS green mr-3">
+                                        <div class="Port_t_sec pb-1 ">
+                                            <h3>Total Ports</h3>
+                                            <div class="rightTool ml-auto">
+                                                <span class="material-icons">more_vert</span>
+                                            </div>
+                                        </div>
+                                        <div class="wiD_A_t">
+                                            <div class="count_widget">95</div>
+                                            <div class="bottom_icon text-right"><img src="../../assets/railC.png">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ChartSec mt-3">
+                                <div class="mmi_ch b-s-Boder">
+                                    <div class="Port_t_sec  ">
+                                        <h3>Port connectivity from road</h3>
+                                        <div class="rightTool ml-auto">
+                                            <span class="material-icons">push_pin</span>
+                                            <span class="material-icons">more_vert</span>
+                                        </div>
+                                    </div>
+                                    <div class="cardBlock">
+                                        <div id="reportTwo" class="chartpie" style="height: 160px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 pl-2">
+                    <div class="mapContainer b-s-Boder">
+                        <div class="Port_t_sec ">
+                            <h3>Port Connectivity</h3>
+                            <div class="rightTool ml-auto">
+                                <span class="material-icons">push_pin</span>
+                                <span class="material-icons">more_vert</span>
+
+                            </div>
+                        </div>
+                        <div class="mmi_mapBox">
+
+                            <div id="map"><img src="../../assets/map.png"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="data_layer_area pt-3">
+            <div class="row ">
+                <div class="col-md-3  pr-2">
+                    <div class="Query_Filter b-s-Boder">
+                        <div class="Port_t_sec ">
+                            <h3>Map Layer Filter <span style="font-size: 18px; vertical-align: middle;"
+                                    class="material-icons-outlined">info</span></h3>
+                            <div class="rightTool ml-auto">
+                                <span class="material-icons">push_pin</span>
+                                <span class="material-icons">more_vert</span>
+
+                            </div>
+                        </div>
+                        <div class="queryFiler">
+                            <div class="form-group">
+                                <label>Administrative</label>
+                                <div class="checkboxArea col3">
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="State">
+                                        <label for="State">State</label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="District">
+                                        <label for="District">District </label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="City">
+                                        <label for="City">City</label>
+                                    </div>
+                                </div>
+                                <div class="checkboxArea col3">
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Town">
+                                        <label for="State">Town</label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Village">
+                                        <label for="Village">Village </label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Pin">
+                                        <label for="Pin">Pin</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Industrial Cluster</label>
+                                <div class="checkboxArea col3">
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Coal">
+                                        <label for="Coal">Coal</label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Cement">
+                                        <label for="Cement">Cement </label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Steel">
+                                        <label for="Steel">Steel</label>
+                                    </div>
+                                </div>
+                                <div class="checkboxArea col3">
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox"
+                                            id="Food-grains">
+                                        <label for="Food-grains">Food-grains</label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox"
+                                            id="Fertilizers">
+                                        <label for="Fertilizers">Fertilizers </label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Iron-ore">
+                                        <label for="Iron-ore">Iron-ore</label>
+                                    </div>
+                                </div>
+                                <div class="checkboxArea col3">
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="E-commerce">
+                                        <label for="E-commerce">E-commerce</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label>Port</label>
+                                <div class="checkboxArea col3">
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Show_Ports">
+                                        <label for="Show_Ports">Show Ports</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Road Infrastructure</label>
+                                <div class="checkboxArea col4">
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="NH">
+                                        <label for="NH">NH</label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="SH">
+                                        <label for="SH">SH </label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="DH">
+                                        <label for="DH">DH</label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Other">
+                                        <label for="Other">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Interventions</label>
+                                <div class="checkboxArea col2">
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Historic">
+                                        <label for="Historic">Historic Traffic</label>
+                                    </div>
+                                    <div class="mmiCheckBox"><input class="mm-Checkbox" type="checkbox" id="Tolls">
+                                        <label for="Tolls">Tolls</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-9  pl-2">
+                    <div class="dataTableArea">
+                        <div class="Port_t_sec ">
+                            <h3>Data <span style="font-size: 18px; vertical-align: middle;"
+                                    class="material-icons-outlined">info</span></h3>
+
+                        </div>
+                        <div class="mmi_table">
+                            <table class="table  ">
+                                <thead>
+                                    <tr>
+                                        <th>Origin</th>
+                                        <th>Destination</th>
+                                        <th>Duration (hrs)</th>
+                                        <th>Cost (thousands)</th>
+                                        <th>Weight (tons)</th>
+                                        <th>Distance (kms)</th>
+                                        <th>Distance (kms)</th>
+                                        <th>Distance (kms)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haryana</td>
+                                        <td>Delhi</td>
+                                        <td>052</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                        <td>5585</td>
+                                        <td>255</td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="chart_layer_area pt-3 pb-3">
+            <div class="row ">
+                <div class="col-md-3  pr-2">
+                    <div class="mmi_ch b-s-Boder mb-3">
+                        <div class="Port_t_sec  ">
+                            <h3>Port connectivity from road</h3>
+                            <div class="rightTool ml-auto">
+                                <span class="material-icons">push_pin</span>
+                                <span class="material-icons">more_vert</span>
+                            </div>
+                        </div>
+                        <div class="cardBlock">
+                            <div id="reportOne" class="chartpie" style="height: 132px;"></div>
+                        </div>
+                    </div>
+                    <div class="mmi_ch b-s-Boder">
+                        <div class="Port_t_sec  ">
+                            <h3>Port connectivity from road</h3>
+                            <div class="rightTool ml-auto">
+                                <span class="material-icons">push_pin</span>
+                                <span class="material-icons">more_vert</span>
+                            </div>
+                        </div>
+                        <div class="cardBlock">
+                            <div id="reportThree" class="chartpie" style="height: 132px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9  pl-2">
+                    <div class="row ">
+                        <div class="col-md-6  pr-2">
+                            <div class="mmi_ch b-s-Boder mb-3">
+                                <div class="Port_t_sec  ">
+                                    <h3>Port connectivity from road</h3>
+                                    <div class="rightTool ml-auto">
+                                        <span class="material-icons">push_pin</span>
+                                        <span class="material-icons">more_vert</span>
+                                    </div>
+                                </div>
+                                <div class="cardBlock">
+                                    <div id="pietrips04" class="chartpie" style="height: 320px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6  pl-2">
+                            <div class="mmi_ch b-s-Boder mb-3">
+                                <div class="Port_t_sec  ">
+                                    <h3>Port connectivity from road</h3>
+                                    <div class="rightTool ml-auto">
+                                        <span class="material-icons">push_pin</span>
+                                        <span class="material-icons">more_vert</span>
+                                    </div>
+                                </div>
+                                <div class="cardBlock">
+                                    <div id="reportFive" class="chartpie" style="height: 320px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

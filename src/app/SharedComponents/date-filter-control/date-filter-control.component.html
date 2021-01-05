@@ -1,0 +1,6 @@
+<div style="display: flex;" *ngIf="FilterContext">
+    <button class="date-button" mat-menu-item (click)="openDateRangePicker()" onclick="this.blur()" (click)="$event.stopPropagation()">
+        <span>Date</span>
+    </button>
+    <mat-divider></mat-divider>
+</div>

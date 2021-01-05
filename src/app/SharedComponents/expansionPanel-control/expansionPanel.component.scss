@@ -1,0 +1,86 @@
+::ng-deep {
+    .mat-expansion-panel {
+        color: #d8d9da !important;
+        font-weight: 400 !important;
+        font-size: 12px !important;
+    }
+    .mat-expansion-panel-header-title {
+        color: #d8d9da !important;
+        font-weight: 400 !important;
+        font-size: 12px !important;
+    }
+    .mat-expansion-panel-body {
+        padding: 0 20px 10px !important;
+    }
+}
+
+.expansion-panel {
+    background-color: #404040;
+    margin: 15px;
+}
+
+.expansion-button {
+    box-shadow: none;
+    background-color: transparent;
+    margin-left: 10px;
+    color: black;
+}
+
+.add-icon {
+    margin-right: 25px;
+    margin-bottom: -5px;
+    font-size: 20px !important;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--button-primary);
+}
+
+.exp-update-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.headerDetail {
+    width: 100%;
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: 90% 5% 5%;
+}
+
+.editIcon {
+    display: block;
+    margin-top: 8px;
+}
+
+.fa-pencil:before {
+    color: var(--button-primary);
+    font-size: 17px !important;
+    font-weight: 500px;
+}
+
+.sort3 {
+    display: block;
+    margin-top: 11px;
+    margin-left: 15px;
+}
+
+.deleteIcon {
+    color: var(--button-primary);
+    font-size: 20px !important;
+    cursor: pointer;
+    padding: 0;
+}
+
+.headerDetail2 {
+    width: 100%;
+    display: grid;
+    grid-template-rows: min-content;
+    grid-template-columns: 5% 85% 5% 5%;
+}
+
+.arrowRight {
+    color: var(--button-primary);
+    font-size: 20px !important;
+    margin-top: 13px;
+    font-weight: 600;
+}

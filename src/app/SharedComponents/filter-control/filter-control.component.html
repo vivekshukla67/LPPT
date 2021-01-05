@@ -1,0 +1,36 @@
+<div style="display: flex;flex-direction: column;border-radius: 1px;
+border: lightslategrey;" *ngIf="FilterContext">
+
+    <div *ngIf="FilterContext.Filters">
+        <app-filter-control class="filters" (filterValueChanged)="SubFilterChanged($event)" [FilterContext]="FilterContext.Filters">
+        </app-filter-control>
+    </div>
+
+    <button class="cssBtn" mat-button [matMenuTriggerFor]="menu" [ngStyle]="{ 'margin-top':FilterContext.Filters ? '20px' : '0px' }" [disabled]="SubFilterString==null ? true : false">{{FilterContext.FilterName}}
+  </button>
+
+    <mat-menu #menu="matMenu" [overlapTrigger]="false" yPosition="below">
+        <span>
+      <div class="search-section" style="max-width: 160px !important">
+        <mat-form-field appearance="legacy" style="position: relative;" (click)="$event.stopPropagation();">
+          <mat-label style="color: var(--card-subtext);">Search</mat-label>
+          <input matInput placeholder="Enter Keyword" autocomplete="off" #filterInputVal
+            (keyup.enter)="searchBox_enterKeyPress($event)">
+          <mat-icon matSuffix class="pointer" style="cursor: pointer; color: var(--card-subtext);"
+            (click)="searchBox_enterKeyPress(filterInputVal)">search</mat-icon>
+          <mat-spinner [diameter]="15" *ngIf="(VisualState | async)===ViewState.Loading" class="setSearchSpinner">
+          </mat-spinner> 
+        </mat-form-field>
+        <small *ngIf="(VisualState | async)===ViewState.NoContent || (VisualState | async)===ViewState.Error || (VisualState | async)===ViewState.Forbidden" style="color: red;">No content found</small>
+      </div>
+    </span>
+        <div *ngIf="FilterContext.SelectMany">
+            <mat-checkbox (click)="$event.stopPropagation()" class="mat-menu-item" [(ngModel)]="pValues.IsSelected" (change)="itemSelectionChanged(pValues)" *ngFor="let pValues of (ItemSource | async)" matTooltip="{{ pValues.DisplayName }}">{{ pValues.DisplayName }}
+            </mat-checkbox>
+        </div>
+        <div *ngIf="!FilterContext.SelectMany">
+            <button mat-menu-item [(ngModel)]="pValues.IsSelected" name="fieldName" ngDefaultControl (click)="itemClicked(pValues , $event)" *ngFor="let pValues of (ItemSource | async)" matTooltip="{{ pValues.DisplayName }}">{{ pValues.DisplayName }}
+      </button>
+        </div>
+    </mat-menu>
+</div>

@@ -1,0 +1,6 @@
+<div style="display: flex;" *ngIf="FilterContext">
+    <button mat-button style="width: 100%;display: flex;
+      justify-content: space-around;" (click)="buttonClicked()" onclick="this.blur()"> <i class="fa fa-plus add"></i>
+    {{ FilterContext.FilterName }}
+  </button>
+</div>

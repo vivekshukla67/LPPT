@@ -1,0 +1,40 @@
+<div>
+  <i class="fa fa-close" style="float: right;cursor: pointer;" (click)="dialogRef.close()"></i>
+</div>
+<div [formGroup]="dateForm">
+  <div>
+    <h1 mat-dialog-title>Start Date</h1>
+  </div>
+  <mat-divider></mat-divider>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <input matInput [matDatepicker]="startDate" placeholder="start date" [(ngModel)]="StartDate"
+        formControlName="startDate">
+      <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+      <mat-datepicker #startDate disabled="false"></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div>
+    <h1 mat-dialog-title>End Date</h1>
+  </div>
+  <mat-divider></mat-divider>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <input matInput [matDatepicker]="endDate" placeholder="end date" [(ngModel)]="EndDate"
+        formControlName="endDate" disabled="true">
+      <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+      <mat-datepicker #endDate [disabled]="EndDateDisabledSate | async"></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <app-field-error-display style="bottom: 60px;" [displayError]="(DateRangeIsError | async)"
+    errorMsg="{{ (DateRangeErrMsg | async) }}">
+  </app-field-error-display>
+
+  <div mat-dialog-actions>
+    <button class="done-button" style="background-color: #d8d9da;color: black" (click)="reset()"
+      mat-raised-button>Reset</button>
+    <button class="done-button" style="min-width: 65px;" (click)="submit();" mat-raised-button
+      [disabled]="BtnDisabledState | async">OK</button>
+  </div>
+</div>
